@@ -24,6 +24,7 @@ public class Contacts_StepDef extends BaseTest
 
     public Contacts_StepDef()
     {
+        
         addedcontactname = UUID.randomUUID().toString();
         Random random = new Random();
 
