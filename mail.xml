@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ContactsANDlists"  preserve-order="true"  verbose="2" >
+    <test name="mymail">
+        <classes>
+            <class name="SendEmail"/>
+
+        </classes>
+    </test>
+</suite>

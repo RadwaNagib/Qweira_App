@@ -1,0 +1,8 @@
+{
+  "browser": "chrome",
+  "baseUrl": "http://173.212.222.155:4200/",
+  "email": "radwa.nagib86@gmail.com",
+  "password": "Radwa.Nagib@31",
+  "timeout": 60
+}
+
