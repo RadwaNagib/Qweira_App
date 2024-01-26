@@ -26,72 +26,72 @@ public class updatecontact_StepDef  extends BaseTest {
     public updatecontact_StepDef() {
 
             addedcontactname = UUID.randomUUID().toString();
-            // phoneNumber=(UUID.randomUUID().toString());
             Random random = new Random();
-
-            // Generate a random 8-digit number
             int randomPart = random.nextInt(10000000);
-
-            // Format the number to have 8 digits
             String formattedNumber = String.format("%08d", randomPart);
-
-            // Concatenate "012" and the random number
             phoneNumber = "012" + formattedNumber;
         }
 
 
     @BeforeClass
-    public void OpenBrowser() throws InterruptedException
+    public void OpenBrowser () throws InterruptedException
     {
-        p001_login p001Login = new p001_login(driver);
-        driver.navigate().to(ConfigReader.getBaseUrl() + "login");
-        new WebDriverWait(driver, Duration.ofSeconds(4)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
+        p001_login p001Login=new p001_login(driver);
+        driver.navigate().to(ConfigReader.getBaseUrl()+"login");
+
         Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(ConfigReader.timeOut()));
         wait.until(d ->p001Login.email().isDisplayed());
+
         Wait<WebDriver> wait1 = new WebDriverWait(driver, Duration.ofSeconds(ConfigReader.timeOut()));
         wait1.until(d ->p001Login.password().isDisplayed());
-        p001Login.login_with_valid_data(driver, ConfigReader.Email(), ConfigReader.PassWord());
 
-        // driver.manage().window().maximize();
+        p001Login.email().sendKeys(ConfigReader.Email());
+        p001Login.password().sendKeys(ConfigReader.PassWord());
+        p001Login.login_button().click();
+
 
     }
-
     @Test(priority = 1)
-    public void contact_manage() throws InterruptedException {
-      //  new WebDriverWait(driver, Duration.ofSeconds(4)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
+    public void assertnavtologinpage() throws InterruptedException
+    {
+        Thread.sleep(2000);
+        String actualResult= driver.getCurrentUrl();
+        System.out.println("Device link is: "+actualResult);
+        String expectedResult="http://173.212.222.155:4200/devices";
+        Assert.assertEquals(actualResult,expectedResult,"error");
+    }
+
+
+    @Test(priority = 2)
+    public void contact_manage()  {
         p002_createlist p002Lists = new p002_createlist(driver);
         Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(ConfigReader.timeOut()));
          wait.until(d -> p002Lists.locate_managecontact_link().isDisplayed());
         p002Lists.locate_managecontact_link().click();
-
-        //  this.editedListName=this.addedlistname+"_edited";
     }
 
     //assert manage contact label appear
-    @Test(priority = 2)
+    @Test(priority = 3)
     public void assert_managelabe_appear() throws InterruptedException {
         Contacts contacts=new Contacts(driver);
         contacts.managecontact_label();
         Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(ConfigReader.timeOut()));
         wait.until(d -> contacts.managecontact_label().isDisplayed());
-      //  new WebDriverWait(driver, Duration.ofSeconds(5)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
-        //Thread.sleep(2000);
         Assert.assertTrue(contacts.allocat_managecontact_label().isDisplayed(), "Managecontact page is not displayed on the page");
     }
 
-    @Test(priority = 3)
-    public void addcontact() throws InterruptedException {
+    @Test(priority = 4)
+    public void addcontact()
+    {
         Contacts contacts = new Contacts(driver);
         Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(ConfigReader.timeOut()));
         wait.until(d -> contacts.loc_addcontact_bttn().isDisplayed());
         contacts.loc_addcontact_bttn().click();
-      //  Thread.sleep(1000);
     }
 
-    @Test(priority = 4)
-    public void assert_nav_addcontact_popscreen() throws InterruptedException {
-       // new WebDriverWait(driver, Duration.ofSeconds(5)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
-        //Thread.sleep(2000);
+    @Test(priority =5)
+    public void assert_nav_addcontact_popscreen()
+    {
         Contacts contacts = new Contacts(driver);
         update_contact updateContact=new update_contact(driver);
         Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(ConfigReader.timeOut()));
@@ -100,26 +100,25 @@ public class updatecontact_StepDef  extends BaseTest {
         if (updateContact.addcontact_popscreen().isDisplayed()) {
             System.out.println("add Contact pop screen appear successfully");
             contacts.text_name_addcontact_popscreen().sendKeys(this.addedcontactname);
-            // contacts.phoneno_addcontact_popscreen().sendKeys(this.phoneNumber+11);
             updateContact.phoneno_addcontact_popscreen().sendKeys(this.phoneNumber);
             updateContact.addbttn_addcontact_popscreen().click();
-            //Thread.sleep(2000);
-        } else {
+        }
+        else
+        {
             System.out.println("add Contact pop screen not appear successfully");
         }
     }
 
-    @Test(priority = 5)
-    public void inseartcontactname_on_searchfield() throws InterruptedException {
-        //p002_deleteList p002DeleteList = new p002_deleteList(driver);
+    @Test(priority = 6)
+    public void inseartcontactname_on_searchfield()
+    {
         update_contact updateContact=new update_contact(driver);
         Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(ConfigReader.timeOut()));
         wait.until(d ->  updateContact.alocatesearch_field().isDisplayed());
-        //p002DeleteList.edit_on_search_field(this.addedcontactname);
         updateContact.alocatesearch_field().sendKeys(addedcontactname);
     }
-//assert contact name on inserted on the table
-    @Test(priority = 6)
+//assert contact name is inserted on the table
+    @Test(priority = 7)
     public void assert_contactname_onsearchfield() throws InterruptedException {
         Thread.sleep(3000);
         WebElement table = driver.findElement(By.xpath("//*[@id=\"mat-tab-content-0-0\"]/div/app-contacts/section/div/div[2]/section/table"));
@@ -152,7 +151,7 @@ public class updatecontact_StepDef  extends BaseTest {
 
     }
 
-    @Test(priority = 7)
+    @Test(priority = 8)
     public void click_updatebttn() {
         update_contact update_contact = new update_contact(driver);
         Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(ConfigReader.timeOut()));
@@ -160,19 +159,17 @@ public class updatecontact_StepDef  extends BaseTest {
         update_contact.locate_edit_contact().click();
     }
 
-    @Test(priority = 8)
-    public void assert_updatecontact_popscrn_appear() throws InterruptedException {
+    @Test(priority = 9)
+    public void assert_updatecontact_popscrn_appear()  {
         update_contact update_contact = new update_contact(driver);
-        //new WebDriverWait(driver, Duration.ofSeconds(5)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
-        //Thread.sleep(2000);
         Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(ConfigReader.timeOut()));
         wait.until(d -> update_contact.locate_edit_contact().isDisplayed());
         Assert.assertTrue(update_contact.locate_edit_contact().isDisplayed(), "UpdateContact is not displayed on the page");
     }
 
-    @Test(priority = 9)
-    public void update_name_phone() {
-       // new WebDriverWait(driver, Duration.ofSeconds(5)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
+    @Test(priority = 10)
+    public void update_name_phone()
+    {
         update_contact update_contact = new update_contact(driver);
         Contacts con = new Contacts(driver);
         Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(ConfigReader.timeOut()));
@@ -181,20 +178,20 @@ public class updatecontact_StepDef  extends BaseTest {
         this.editedcontactname = this.addedcontactname + "_edited";
        update_contact.text_name_addcontact_popscreen().sendKeys(this.editedcontactname);
         update_contact.phoneno_addcontact_popscreen().clear();
-        //con.phoneno_addcontact_popscreen().sendKeys(this.phoneNumber);
        update_contact.phoneno_addcontact_popscreen().sendKeys(this.phoneNumber);
-    }//text_name_addcontact_popscreen
+    }
 
     //click on save bttn after update contact
-    @Test(priority = 10)
-    public void clicksavebttn() throws InterruptedException {
+    @Test(priority = 11)
+    public void clicksavebttn()
+    {
         update_contact update_contact = new update_contact(driver);
         Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(ConfigReader.timeOut()));
         wait.until(d -> update_contact.locate_save_btton().isDisplayed());
         update_contact.locate_save_btton().click();
-       // Thread.sleep(2000);
+
     }
-@Test(priority = 11)
+@Test(priority = 12)
     public void assert_update_contactname_done_success() throws InterruptedException {
         Thread.sleep(3000);
         WebElement table = driver.findElement(By.xpath("//*[@id=\"mat-tab-content-0-0\"]/div/app-contacts/section/div/div[2]/section/table"));
@@ -225,7 +222,7 @@ public class updatecontact_StepDef  extends BaseTest {
 
     @AfterTest
     public void closeDriver() throws InterruptedException {
-        //Thread.sleep(1000);
+        Thread.sleep(1000);
         driver.close();
         driver.quit();
     }

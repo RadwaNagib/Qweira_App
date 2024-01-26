@@ -38,16 +38,31 @@ public class updatelist_StepDef extends BaseTest {
     {
         p001_login p001Login=new p001_login(driver);
         driver.navigate().to(ConfigReader.getBaseUrl()+"login");
-        // driver.manage().window().maximize();
+
         Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(ConfigReader.timeOut()));
         wait.until(d ->p001Login.email().isDisplayed());
+
         Wait<WebDriver> wait1 = new WebDriverWait(driver, Duration.ofSeconds(ConfigReader.timeOut()));
         wait1.until(d ->p001Login.password().isDisplayed());
-        p001Login.login_with_valid_data(driver, ConfigReader.Email(),ConfigReader.PassWord());
+
+        p001Login.email().sendKeys(ConfigReader.Email());
+        p001Login.password().sendKeys(ConfigReader.PassWord());
+        p001Login.login_button().click();
+
 
     }
-
     @Test(priority = 1)
+    public void assertnavtologinpage() throws InterruptedException
+    {
+        Thread.sleep(2000);
+        String actualResult= driver.getCurrentUrl();
+        System.out.println("Device link is: "+actualResult);
+        String expectedResult="http://173.212.222.155:4200/devices";
+        Assert.assertEquals(actualResult,expectedResult,"error");
+    }
+
+
+    @Test(priority = 2)
     public void navigate_managecontacts() throws InterruptedException{
        // p002_createlist p002Lists =new p002_createlist(driver);
         p002_updatelist p002Updatelist=new p002_updatelist(driver);
@@ -60,7 +75,7 @@ public class updatelist_StepDef extends BaseTest {
         //Thread.sleep(2000);
     }
 
-    @Test(priority = 2)
+    @Test(priority = 3)
     public void navigate_lists() throws InterruptedException {
         p002_updatelist p002Updatelist=new p002_updatelist(driver);
        // p002_createlist p002Lists =new p002_createlist(driver);
@@ -71,7 +86,7 @@ public class updatelist_StepDef extends BaseTest {
     }
 
     //assert navigate to list tab by using addlist button
-    @Test(priority = 3)
+    @Test(priority = 4)
     public void assert_nav_to_liststap()
     {
         //p002_createlist p002Lists =new p002_createlist(driver);
@@ -82,7 +97,7 @@ public class updatelist_StepDef extends BaseTest {
         Assert.assertTrue(p002Updatelist.addlist_button().isDisplayed(), "Managecontact page is not displayed on the page");
 
     }
-    @Test(priority = 4)
+    @Test(priority = 5)
     public void navigate_addlists() throws InterruptedException {
         //p002_createlist p002Lists =new p002_createlist(driver);
         p002_updatelist p002Updatelist=new p002_updatelist(driver);
@@ -90,7 +105,7 @@ public class updatelist_StepDef extends BaseTest {
         wait.until(d ->p002Updatelist.addlist_button().isDisplayed());
         p002Updatelist.addlist_button().click();
     }
-    @Test(priority = 5)
+    @Test(priority = 6)
     public void assert_appear_namelbel_popscren() {
        // new WebDriverWait(driver,Duration.ofSeconds(8)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
        // p002_createlist p002Lists =new p002_createlist(driver);
@@ -100,7 +115,7 @@ public class updatelist_StepDef extends BaseTest {
         Assert.assertTrue(p002Updatelist.loc_popscrn_addlist_title().isDisplayed(), "not found popscreen of add lists");
 
     }
-    @Test(priority = 6)
+    @Test(priority = 7)
     public void addlistname() throws InterruptedException {
         p002_updatelist p002Updatelist=new p002_updatelist(driver);
         //p002_createlist p002Lists =new p002_createlist(driver);
@@ -109,7 +124,7 @@ public class updatelist_StepDef extends BaseTest {
         System.out.println("Name of list name is :" + this.addedlistname);
 
     }
-    @Test(priority = 7)
+    @Test(priority =8)
     public void addbutton_click() throws InterruptedException {
         p002_updatelist p002Updatelist=new p002_updatelist(driver);
        // p002_createlist p002Lists =new p002_createlist(driver);
@@ -118,7 +133,7 @@ public class updatelist_StepDef extends BaseTest {
         p002Updatelist.addbutton().click();
     }
 
-    @Test(priority = 8)
+    @Test(priority = 9)
     public void assert_addlist_ontable() throws InterruptedException {
         Thread.sleep(2000);
         // Locate the table element
@@ -149,7 +164,7 @@ public class updatelist_StepDef extends BaseTest {
         }
     }
 
-    @Test(priority = 9)
+    @Test(priority = 10)
     public void inserton_searchfield() throws InterruptedException
     {
         p002_updatelist p002Updatelist=new p002_updatelist(driver);
@@ -158,14 +173,14 @@ public class updatelist_StepDef extends BaseTest {
         p002Updatelist.alocatesearch_field().sendKeys(this.addedlistname);
     }
 
-    @Test(priority = 10)
+    @Test(priority = 11)
     public void editclick() {
         p002_updatelist p002Updatelist = new p002_updatelist(driver);
         Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(ConfigReader.timeOut()));
         wait.until(d ->p002Updatelist.edit_ele().isDisplayed());
         p002Updatelist.edit_ele().click();
     }
-@Test(priority = 11)
+@Test(priority = 12)
 public void assert_editdata_popscrn_appear()
 {
    // new WebDriverWait(driver,Duration.ofSeconds(6)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
@@ -175,7 +190,7 @@ public void assert_editdata_popscrn_appear()
     Assert.assertTrue(p002Updatelist.loceditdata().isDisplayed(),"edit data popscrn not appear");
 }
 
-    @Test(priority = 12)
+    @Test(priority = 13)
     public void write_new_list_name() {
         //new WebDriverWait(driver,Duration.ofSeconds(6)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
         p002_updatelist p002Updatelist = new p002_updatelist(driver);
@@ -185,14 +200,14 @@ public void assert_editdata_popscrn_appear()
         editedListName=addedlistname+"_Edite";
         p002Updatelist.edittext().sendKeys(this.editedListName);
     }
-@Test(priority = 13)
+@Test(priority = 14)
 public void click_on_updatebttn() {
   //  new WebDriverWait(driver,Duration.ofSeconds(6)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
     p002_updatelist p002Updatelist = new p002_updatelist(driver);
     p002Updatelist.bttn_update().click();
 }
 
-@Test(priority = 14)
+@Test(priority = 15)
 public void assert_update_done_success() throws InterruptedException {
     Thread.sleep(3000);
     WebElement table = driver.findElement(By.xpath("//*[@id=\"mat-tab-content-0-1\"]/div/app-lists/section/div[1]/section/table"));

@@ -40,19 +40,34 @@ public class deleteContact_StepDef extends BaseTest{
     @BeforeClass
     public void OpenBrowser () throws InterruptedException
     {
-        p001_login p001Login = new p001_login(driver);
-        driver.navigate().to(ConfigReader.getBaseUrl() + "login");
-        new WebDriverWait(driver, Duration.ofSeconds(4)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
+        p001_login p001Login=new p001_login(driver);
+        driver.navigate().to(ConfigReader.getBaseUrl()+"login");
+
         Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(ConfigReader.timeOut()));
         wait.until(d ->p001Login.email().isDisplayed());
+
         Wait<WebDriver> wait1 = new WebDriverWait(driver, Duration.ofSeconds(ConfigReader.timeOut()));
         wait1.until(d ->p001Login.password().isDisplayed());
-        p001Login.login_with_valid_data(driver, ConfigReader.Email(), ConfigReader.PassWord());
+
+        p001Login.email().sendKeys(ConfigReader.Email());
+        p001Login.password().sendKeys(ConfigReader.PassWord());
+        p001Login.login_button().click();
+
 
     }
-
     @Test(priority = 1)
-    public void contact_manage() throws InterruptedException
+    public void assertnavtologinpage() throws InterruptedException
+    {
+        Thread.sleep(2000);
+        String actualResult= driver.getCurrentUrl();
+        System.out.println("Device link is: "+actualResult);
+        String expectedResult="http://173.212.222.155:4200/devices";
+        Assert.assertEquals(actualResult,expectedResult,"error");
+    }
+
+
+    @Test(priority = 2)
+    public void contact_manage()
     {
         p002_createlist p002Lists =new p002_createlist(driver);
         Wait<WebDriver> wait1 = new WebDriverWait(driver, Duration.ofSeconds(ConfigReader.timeOut()));
@@ -61,41 +76,32 @@ public class deleteContact_StepDef extends BaseTest{
     }
 
     //assert manage contact label appear
-    @Test(priority =2)
-    public void assert_managelabe_appear() throws InterruptedException
+    @Test(priority =3)
+    public void assert_managelabe_appear()
     {
-        //p001_login p001Login=new p001_login(driver);
+
         Contacts contacts=new Contacts(driver);
         Wait<WebDriver> wait1 = new WebDriverWait(driver, Duration.ofSeconds(ConfigReader.timeOut()));
         wait1.until(d -> contacts.managecontact_label().isDisplayed());
-       // contacts.managecontact_label();
-        //String expectedResult="http://173.212.222.155:4200/contacts?tab=contacts";
-        // String actualResult=driver.getCurrentUrl();
-        //Assert.assertTrue(actualResult.contains(expectedResult), "Error Message: can't navigate to Manage Contact link");
-      //  new WebDriverWait(driver, Duration.ofSeconds(5)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
-       // Thread.sleep(2000);
         Assert.assertTrue(contacts.allocat_managecontact_label().isDisplayed(), "Managecontact page is not displayed on the page");
     }
 
-    @Test(priority = 3)
-    public void addcontact() throws InterruptedException
+    @Test(priority = 4)
+    public void addcontact()
     {
         deleteContact deleteContact=new deleteContact(driver);
         Wait<WebDriver> wait1 = new WebDriverWait(driver, Duration.ofSeconds(ConfigReader.timeOut()));
         wait1.until(d -> deleteContact.loc_addcontact_bttn().isDisplayed());
-        //Contacts contacts=new Contacts(driver);
         deleteContact.loc_addcontact_bttn().click();
-        //Thread.sleep(1000);
+
     }
 
-    @Test(priority = 4)
-    public void assert_nav_addcontact_popscreen_filldata() throws InterruptedException {
-       // new WebDriverWait(driver, Duration.ofSeconds(5)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
-        //Thread.sleep(2000);
+    @Test(priority = 5)
+    public void assert_nav_addcontact_popscreen_filldata()
+            {
         deleteContact deleteContact=new deleteContact(driver);
         Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(ConfigReader.timeOut()));
         wait.until(d -> deleteContact.addcontact_popscreen().isDisplayed());
-        //Contacts contacts = new Contacts(driver);
         if (deleteContact.addcontact_popscreen().isDisplayed()) {
             System.out.println("add Contact pop screen appear successfully");
             Wait<WebDriver> wait1 = new WebDriverWait(driver, Duration.ofSeconds(ConfigReader.timeOut()));
@@ -103,24 +109,23 @@ public class deleteContact_StepDef extends BaseTest{
            deleteContact.text_name_addcontact_popscreen().sendKeys(this.addedcontactname);
             deleteContact.phoneno_addcontact_popscreen().sendKeys(this.phoneNumber);
            deleteContact.addbttn_addcontact_popscreen().click();
-           // Thread.sleep(2000);
-        } else {
+        }
+        else
+        {
             System.out.println("add Contact pop screen not appear successfully");
         }
     }
-    @Test(priority = 5)
-    public void inseartcontactname_on_searchfield() throws InterruptedException {
+    @Test(priority = 6)
+    public void inseartcontactname_on_searchfield()
+    {
         deleteContact deleteContact=new deleteContact(driver);
-        //p002_deleteList p002DeleteList = new p002_deleteList(driver);
         Wait<WebDriver> wait1 = new WebDriverWait(driver, Duration.ofSeconds(ConfigReader.timeOut()));
         wait1.until(d -> deleteContact.alocatesearch_field().isDisplayed());
-       //deleteContact.alocatesearch_field();
        deleteContact.alocatesearch_field().sendKeys(this.addedcontactname);
-        //p002DeleteList.edit_on_search_field(this.addedcontactname);
     }
 
     //assert contact name on inserted on the table
-    @Test(priority = 6)
+    @Test(priority = 7)
     public void assert_contactname_onsearchfield() throws InterruptedException {
         Thread.sleep(2000);
         WebElement table = driver.findElement(By.xpath("//*[@id=\"mat-tab-content-0-0\"]/div/app-contacts/section/div/div[2]/section/table"));
@@ -154,15 +159,13 @@ public class deleteContact_StepDef extends BaseTest{
 
     }
 
-    @Test(priority = 9)
-    public void selclickcheckbox() throws InterruptedException
+    @Test(priority = 8)
+    public void selclickcheckbox()
     {
       deleteContact dcontact=new deleteContact(driver);
-       // Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(60));
-        //wait.until(d -> dcontact.locatecheckbox().isDisplayed());
       dcontact.locatecheckbox().click();
     }
-    @Test(priority = 10)
+    @Test(priority = 9)
     public void deletebttnclick  () throws InterruptedException
     {
        deleteContact dcontact=new deleteContact(driver);
@@ -170,7 +173,7 @@ public class deleteContact_StepDef extends BaseTest{
         wait.until(d -> dcontact.locatedeletebttn().isDisplayed());
        dcontact.locatedeletebttn().click();
     }
-   @Test(priority = 11)
+   @Test(priority = 10)
    public void confirmbttnclick()
    {
        deleteContact dcontact=new deleteContact(driver);
@@ -179,7 +182,7 @@ public class deleteContact_StepDef extends BaseTest{
        dcontact.confirmbtton().click();
    }
 
-   @Test(priority = 12)
+   @Test(priority = 11)
    public void assertdelltcontactdone() throws InterruptedException
    {
        new WebDriverWait(driver, Duration.ofSeconds(9)).until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
@@ -190,8 +193,8 @@ public class deleteContact_StepDef extends BaseTest{
        // Find all rows within the table
        List<WebElement> rows = table.findElements(By.tagName("tr"));
 // Iterate through the rows and search for list name
-       for (WebElement row : rows) {
-           //Thread.sleep(2000);
+       for (WebElement row : rows)
+       {
            // Find all cells within the row
            List<WebElement> cells = row.findElements(By.tagName("td"));
 
@@ -205,9 +208,10 @@ public class deleteContact_StepDef extends BaseTest{
                    // Perform assertion
                    break;
                }
-               else{
-                   System.out.println("contact not deleted successfully");}
-
+               else
+               {
+                   System.out.println("contact not deleted successfully");
+               }
            }
 
        }
@@ -216,9 +220,8 @@ public class deleteContact_StepDef extends BaseTest{
 
 
     @AfterClass
-    public void closeBrowser() throws InterruptedException
+    public void closeBrowser()
     {
-        //Thread.sleep(1000);
         driver.close();
         driver.quit();
     }
