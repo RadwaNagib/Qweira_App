@@ -1,5 +1,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Contact,Lists"  preserve-order="true"  verbose="2" >
+<!--<suite name="Contact,Lists"  preserve-order="true"  verbose="2" > -->
+    <suite name="AddContactToList"  preserve-order="true"  verbose="2" >
+    <test name="addcontacttolist">
+        <classes>
+            <class name="addContactOnList"/>
+
+        </classes>
+    </test>
+<!--
     <test name="add_Contact">
         <classes>
             <class name="Contacts_StepDef"/>
@@ -18,7 +26,7 @@
 
         </classes>
 
-    </test>
+    </test> -->
     <!-- <test name="createlist">
          <classes>
              <class name="createList_StepDef"/>

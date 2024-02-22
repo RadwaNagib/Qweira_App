@@ -25,72 +25,52 @@ td,th {border:1px solid #009;padding:.25em .5em}
 <body>
 <table cellspacing="0" cellpadding="0" class="testOverview">
 <tr><th>Test</th><th>Methods<br/>Passed</th><th>Scenarios<br/>Passed</th><th># skipped</th><th># failed</th><th>Total<br/>Time</th><th>Included<br/>Groups</th><th>Excluded<br/>Groups</th></tr>
-<tr><td style="text-align:left;padding-right:2em"><a href="#t1">add_Contact</a></td><td class="numi">4</td><td class="numi">4</td><td class="numi">0</td><td class="numi">0</td><td class="numi">13.6 seconds</td><td class="numi"></td><td class="numi"></td></tr>
-<tr class="stripe"><td style="text-align:left;padding-right:2em"><a href="#t2">update_Contact</a></td><td class="numi">11</td><td class="numi">11</td><td class="numi">0</td><td class="numi">0</td><td class="numi">24.8 seconds</td><td class="numi"></td><td class="numi"></td></tr>
-<tr><td style="text-align:left;padding-right:2em"><a href="#t3">Delete_Contact</a></td><td class="numi">10</td><td class="numi">10</td><td class="numi">0</td><td class="numi">0</td><td class="numi">22.3 seconds</td><td class="numi"></td><td class="numi"></td></tr>
-<tr class="total"><td>Total</td>
-<td class="numi">25</td><td class="numi">25</td><td class="numi">0</td><td class="numi">0</td><td class="numi">60.7 seconds</td><td colspan="2">&nbsp;</td></tr>
+<tr><td style="text-align:left;padding-right:2em"><a href="#t1">addcontacttolist</a></td><td class="numi">20</td><td class="numi">20</td><td class="numi">0</td><td class="numi">0</td><td class="numi">50.9 seconds</td><td class="numi"></td><td class="numi"></td></tr>
 </table>
 <table cellspacing="0" cellpadding="0" class="methodOverview" id="summary">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
-<tr id="t1"><th colspan="5">add_Contact &#8212; passed</th></tr>
-<tr class="passedodd"><td rowspan="4">Contacts_StepDef</td><td><a href="#m1"><b>addcontact</b>  </a></td><td class="numi">1</td><td>1706181979751</td><td class="numi">1392</td></tr><tr class="passedodd"><td><a href="#m2"><b>assert_managelabe_appear</b>  </a></td><td class="numi">1</td><td>1706181979710</td><td class="numi">38</td></tr><tr class="passedodd"><td><a href="#m3"><b>contact_manage</b>  </a></td><td class="numi">1</td><td>1706181979655</td><td class="numi">51</td></tr><tr class="passedodd"><td><a href="#m4"><b>assert_nav_addcontact_popscreen_filldata</b>  </a></td><td class="numi">1</td><td>1706181981144</td><td class="numi">475</td></tr>
-<tr id="t2"><th colspan="5">update_Contact &#8212; passed</th></tr>
-<tr class="passedodd"><td rowspan="11">updatecontact_StepDef</td><td><a href="#m5"><b>assert_update_contactname_done_success</b>  </a></td><td class="numi">1</td><td>1706182002776</td><td class="numi">3632</td></tr><tr class="passedodd"><td><a href="#m6"><b>clicksavebttn</b>  </a></td><td class="numi">1</td><td>1706182002697</td><td class="numi">78</td></tr><tr class="passedodd"><td><a href="#m7"><b>contact_manage</b>  </a></td><td class="numi">1</td><td>1706181993066</td><td class="numi">84</td></tr><tr class="passedodd"><td><a href="#m8"><b>assert_contactname_onsearchfield</b>  </a></td><td class="numi">1</td><td>1706181995024</td><td class="numi">7130</td></tr><tr class="passedodd"><td><a href="#m9"><b>update_name_phone</b>  </a></td><td class="numi">1</td><td>1706182002300</td><td class="numi">397</td></tr><tr class="passedodd"><td><a href="#m10"><b>click_updatebttn</b>  </a></td><td class="numi">1</td><td>1706182002154</td><td class="numi">97</td></tr><tr class="passedodd"><td><a href="#m11"><b>inseartcontactname_on_searchfield</b>  </a></td><td class="numi">1</td><td>1706181994862</td><td class="numi">161</td></tr><tr class="passedodd"><td><a href="#m12"><b>assert_updatecontact_popscrn_appear</b>  </a></td><td class="numi">1</td><td>1706182002251</td><td class="numi">49</td></tr><tr class="passedodd"><td><a href="#m13"><b>assert_managelabe_appear</b>  </a></td><td class="numi">1</td><td>1706181993151</td><td class="numi">55</td></tr><tr class="passedodd"><td><a href="#m14"><b>assert_nav_addcontact_popscreen</b>  </a></td><td class="numi">1</td><td>1706181994405</td><td class="numi">456</td></tr><tr class="passedodd"><td><a href="#m15"><b>addcontact</b>  </a></td><td class="numi">1</td><td>1706181993206</td><td class="numi">1198</td></tr>
-<tr id="t3"><th colspan="5">Delete_Contact &#8212; passed</th></tr>
-<tr class="passedodd"><td rowspan="10">deleteContact_StepDef</td><td><a href="#m16"><b>assert_contactname_onsearchfield</b>  </a></td><td class="numi">1</td><td>1706182021039</td><td class="numi">4120</td></tr><tr class="passedodd"><td><a href="#m17"><b>assertdelltcontactdone</b>  </a></td><td class="numi">1</td><td>1706182025408</td><td class="numi">3242</td></tr><tr class="passedodd"><td><a href="#m18"><b>assert_managelabe_appear</b>  </a></td><td class="numi">1</td><td>1706182018480</td><td class="numi">62</td></tr><tr class="passedodd"><td><a href="#m19"><b>addcontact</b>  </a></td><td class="numi">1</td><td>1706182018547</td><td class="numi">1750</td></tr><tr class="passedodd"><td><a href="#m20"><b>selclickcheckbox</b>  </a></td><td class="numi">1</td><td>1706182025159</td><td class="numi">59</td></tr><tr class="passedodd"><td><a href="#m21"><b>deletebttnclick</b>  </a></td><td class="numi">1</td><td>1706182025219</td><td class="numi">103</td></tr><tr class="passedodd"><td><a href="#m22"><b>confirmbttnclick</b>  </a></td><td class="numi">1</td><td>1706182025323</td><td class="numi">84</td></tr><tr class="passedodd"><td><a href="#m23"><b>inseartcontactname_on_searchfield</b>  </a></td><td class="numi">1</td><td>1706182020803</td><td class="numi">236</td></tr><tr class="passedodd"><td><a href="#m24"><b>assert_nav_addcontact_popscreen_filldata</b>  </a></td><td class="numi">1</td><td>1706182020297</td><td class="numi">506</td></tr><tr class="passedodd"><td><a href="#m25"><b>contact_manage</b>  </a></td><td class="numi">1</td><td>1706182018366</td><td class="numi">113</td></tr>
+<tr id="t1"><th colspan="5">addcontacttolist &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="20">addContactOnList</td><td><a href="#m1"><b>assert_nav_to_liststap</b>  </a></td><td class="numi">1</td><td>1708427961308</td><td class="numi">61</td></tr><tr class="passedodd"><td><a href="#m2"><b>addlistname</b>  </a></td><td class="numi">1</td><td>1708427961557</td><td class="numi">215</td></tr><tr class="passedodd"><td><a href="#m3"><b>assert_addlist_ontable</b>  </a></td><td class="numi">1</td><td>1708427961892</td><td class="numi">3295</td></tr><tr class="passedodd"><td><a href="#m4"><b>assert_contactname_onsearchfield</b>  </a></td><td class="numi">1</td><td>1708427970069</td><td class="numi">9153</td></tr><tr class="passedodd"><td><a href="#m5"><b>assert_appear_namelbel_popscren</b>  </a></td><td class="numi">1</td><td>1708427961480</td><td class="numi">76</td></tr><tr class="passedodd"><td><a href="#m6"><b>addcontact</b>  </a></td><td class="numi">1</td><td>1708427965306</td><td class="numi">139</td></tr><tr class="passedodd"><td><a href="#m7"><b>select_checkbox</b>  </a></td><td class="numi">1</td><td>1708427979473</td><td class="numi">18454</td></tr><tr class="passedodd"><td><a href="#m8"><b>click_on_save_bttn</b>  </a></td><td class="numi">1</td><td>1708427997928</td><td class="numi">32</td></tr><tr class="passedodd"><td><a href="#m9"><b>contact_manage</b>  </a></td><td class="numi">1</td><td>1708427959949</td><td class="numi">112</td></tr><tr class="passedodd"><td><a href="#m10"><b>addbutton_click</b>  </a></td><td class="numi">1</td><td>1708427961772</td><td class="numi">120</td></tr><tr class="passedodd"><td><a href="#m11"><b>assert_nav_addcontact_popscreen_filldata</b>  </a></td><td class="numi">1</td><td>1708427965445</td><td class="numi">465</td></tr><tr class="passedodd"><td><a href="#m12"><b>assertnavtologinpage</b>  </a></td><td class="numi">1</td><td>1708427957916</td><td class="numi">2033</td></tr><tr class="passedodd"><td><a href="#m13"><b>assert_addcontacttolist_popscrn_appear</b>  </a></td><td class="numi">1</td><td>1708427979380</td><td class="numi">93</td></tr><tr class="passedodd"><td><a href="#m14"><b>assert_managelabe_appear</b>  </a></td><td class="numi">1</td><td>1708427960063</td><td class="numi">53</td></tr><tr class="passedodd"><td><a href="#m15"><b>clickaddtolist_bttn</b>  </a></td><td class="numi">1</td><td>1708427979276</td><td class="numi">104</td></tr><tr class="passedodd"><td><a href="#m16"><b>navigate_lists</b>  </a></td><td class="numi">1</td><td>1708427960117</td><td class="numi">1190</td></tr><tr class="passedodd"><td><a href="#m17"><b>selclickcheckbox</b>  </a></td><td class="numi">1</td><td>1708427979222</td><td class="numi">53</td></tr><tr class="passedodd"><td><a href="#m18"><b>navigate_addlists</b>  </a></td><td class="numi">1</td><td>1708427961369</td><td class="numi">111</td></tr><tr class="passedodd"><td><a href="#m19"><b>inseartcontactname_on_searchfield</b>  </a></td><td class="numi">1</td><td>1708427965910</td><td class="numi">4158</td></tr><tr class="passedodd"><td><a href="#m20"><b>press_contacts_tap</b>  </a></td><td class="numi">1</td><td>1708427965187</td><td class="numi">118</td></tr>
 </table>
-<h1>add_Contact</h1>
-<h2 id="m1">Contacts_StepDef:addcontact</h2>
+<h1>addcontacttolist</h1>
+<h2 id="m1">addContactOnList:assert_nav_to_liststap</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m2">Contacts_StepDef:assert_managelabe_appear</h2>
+<h2 id="m2">addContactOnList:addlistname</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m3">Contacts_StepDef:contact_manage</h2>
+<h2 id="m3">addContactOnList:assert_addlist_ontable</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m4">Contacts_StepDef:assert_nav_addcontact_popscreen_filldata</h2>
+<h2 id="m4">addContactOnList:assert_contactname_onsearchfield</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h1>update_Contact</h1>
-<h2 id="m5">updatecontact_StepDef:assert_contactname_onsearchfield</h2>
+<h2 id="m5">addContactOnList:assert_appear_namelbel_popscren</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m6">updatecontact_StepDef:assert_update_contactname_done_success</h2>
+<h2 id="m6">addContactOnList:addcontact</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m7">updatecontact_StepDef:update_name_phone</h2>
+<h2 id="m7">addContactOnList:select_checkbox</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m8">updatecontact_StepDef:clicksavebttn</h2>
+<h2 id="m8">addContactOnList:click_on_save_bttn</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m9">updatecontact_StepDef:click_updatebttn</h2>
+<h2 id="m9">addContactOnList:contact_manage</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m10">updatecontact_StepDef:inseartcontactname_on_searchfield</h2>
+<h2 id="m10">addContactOnList:addbutton_click</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m11">updatecontact_StepDef:assert_updatecontact_popscrn_appear</h2>
+<h2 id="m11">addContactOnList:assert_nav_addcontact_popscreen_filldata</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m12">updatecontact_StepDef:contact_manage</h2>
+<h2 id="m12">addContactOnList:assertnavtologinpage</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m13">updatecontact_StepDef:assert_managelabe_appear</h2>
+<h2 id="m13">addContactOnList:assert_addcontacttolist_popscrn_appear</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m14">updatecontact_StepDef:assert_nav_addcontact_popscreen</h2>
+<h2 id="m14">addContactOnList:assert_managelabe_appear</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m15">updatecontact_StepDef:addcontact</h2>
+<h2 id="m15">addContactOnList:clickaddtolist_bttn</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h1>Delete_Contact</h1>
-<h2 id="m16">deleteContact_StepDef:assert_contactname_onsearchfield</h2>
+<h2 id="m16">addContactOnList:navigate_lists</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m17">deleteContact_StepDef:assertdelltcontactdone</h2>
+<h2 id="m17">addContactOnList:selclickcheckbox</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m18">deleteContact_StepDef:deletebttnclick</h2>
+<h2 id="m18">addContactOnList:navigate_addlists</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m19">deleteContact_StepDef:confirmbttnclick</h2>
+<h2 id="m19">addContactOnList:inseartcontactname_on_searchfield</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m20">deleteContact_StepDef:assert_managelabe_appear</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m21">deleteContact_StepDef:inseartcontactname_on_searchfield</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m22">deleteContact_StepDef:addcontact</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m23">deleteContact_StepDef:assert_nav_addcontact_popscreen_filldata</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m24">deleteContact_StepDef:contact_manage</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m25">deleteContact_StepDef:selclickcheckbox</h2>
+<h2 id="m20">addContactOnList:press_contacts_tap</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
 </body></html>
