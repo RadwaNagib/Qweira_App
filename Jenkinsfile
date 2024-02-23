@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Checkout the code from the repository
-                git 'https://github.com/RadwaNagib/Qweira_App.git'
+                // Explicitly checkout the code from the repository and set the branch
+                checkout([$class: 'GitSCM', branches: [[name: 'main']], userRemoteConfigs: [[url: 'https://github.com/RadwaNagib/Qweira_App.git']]])
             }
         }
 
@@ -22,6 +22,6 @@ pipeline {
                 sh 'mvn test'
             }
         }
-        }
     }
+}
 
