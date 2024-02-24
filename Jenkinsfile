@@ -17,7 +17,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 // Run your Maven project tests
-                sh 'mvn test'
+                sh 'regression.xml'
             }
         }
     }
