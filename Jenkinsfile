@@ -7,17 +7,16 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: 'main']], userRemoteConfigs: [[url: 'https://github.com/RadwaNagib/Qweira_App.git']]])
             }
         }
-        stage('Build') {
+         stage('Build') {
             steps {
-                // Build the Maven project
-                sh 'mvn clean install'
+                bat "${MAVEN_HOME}\\bin\\mvn clean install"
             }
         }
 
-        stage('Run Tests') {
+         stage('Run Tests') {
             steps {
-                // Run your Maven project tests
-                sh 'regression.xml'
+                // Assuming your tests are testNG tests
+               bat "${MAVEN_HOME}\\bin\\mvn test -Dtestng.file="
             }
         }
     }
