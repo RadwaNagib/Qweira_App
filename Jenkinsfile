@@ -20,7 +20,7 @@ pipeline {
          stage('Run Tests') {
            steps {
         // Assuming your tests are TestNG tests
-        bat "\"${MAVEN_HOME}\\bin\\mvn\" test -Dtestng.file=regression.xml"
+        bat "\"${MAVEN_HOME}\\bin\\mvn\" test -Dtestng.file=createList_StepDef.java"
     }
         }
          stage('Run Tests1') {
