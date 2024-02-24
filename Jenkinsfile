@@ -12,7 +12,12 @@ pipeline {
                bat "\"${MAVEN_HOME}\\bin\\mvn\" clean install"
             }
         }
-
+  stage('Build1') {
+            steps {
+                bat 'make' 
+                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
+            }
+        }
          stage('Run Tests') {
             steps {
                 // Assuming your tests are testNG tests
