@@ -7,7 +7,6 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: 'main']], userRemoteConfigs: [[url: 'https://github.com/RadwaNagib/Qweira_App.git']]])
             }
         }
-
         stage('Build') {
             steps {
                 // Build the Maven project
