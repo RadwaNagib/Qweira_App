@@ -292,13 +292,10 @@ public class addContactOnList extends BaseTest
 
                 // Perform the search based on the cell content
                 if (cellText.equals(this.addedlistname)) {
-                    //addcontactOnlist.loc_checkbox_popscren().click();
-                    WebElement findmyele=cells.get(cells.size()-1);
-                    //WebElement findmyele_2=cells.get(cells.size()+1).findElement(By.xpath("/html/body/app-root/nb-layout/div[2]/div[2]/div/mat-dialog-container/div/div/app-contactlists/section/div[3]/div/table/tbody/tr[2]/td[1]/mat-checkbox/div/div/input"));
-                    WebElement checkboxOf_finemyele=findmyele.findElement(By.xpath("/html/body/app-root/nb-layout/div[2]/div[2]/div/mat-dialog-container/div/div/app-contactlists/section/div[3]/div/table/tbody/tr[1]/td[1]/mat-checkbox/div/div/input"));
-                    System.out.println("my checkbox locate is:" +checkboxOf_finemyele);
-                    checkboxOf_finemyele.click();
-                   // findmyele_2.click();
+                    WebElement findmyele=cells.get(cells.size());
+                    //WebElement checkboxOf_finemyele=findmyele.findElement(By.xpath("/html/body/app-root/nb-layout/div[2]/div[2]/div/mat-dialog-container/div/div/app-contactlists/section/div[3]/div/table/tbody/tr[1]/td[1]/mat-checkbox/div/div/input"));
+                    System.out.println("my checkbox locate is:" +findmyele);
+                    findmyele.click();
                 }
             }
         }
