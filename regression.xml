@@ -1,7 +1,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<<<<<<< Updated upstream
 <suite name="Contact,Lists"  preserve-order="true"  verbose="2" > 
   <!--  <suite name="AddContactToList"  preserve-order="true"  verbose="2" >
      <test name="addcontacttolist">
+=======
+<suite name="Contact,Lists"  preserve-order="true"  verbose="2" >
+   <!-- <suite name="AddContactToList"  preserve-order="true"  verbose="2" > -->
+    <!-- <test name="addcontacttolist">
+>>>>>>> Stashed changes
          <classes>
              <class name="addContactOnList"/>
 

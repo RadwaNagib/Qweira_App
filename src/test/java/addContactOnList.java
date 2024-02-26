@@ -292,7 +292,7 @@ public class addContactOnList extends BaseTest
 
                 // Perform the search based on the cell content
                 if (cellText.equals(this.addedlistname)) {
-                    WebElement findmyele=cells.get(cells.size());
+                    WebElement findmyele=cells.get(0);
                     //WebElement checkboxOf_finemyele=findmyele.findElement(By.xpath("/html/body/app-root/nb-layout/div[2]/div[2]/div/mat-dialog-container/div/div/app-contactlists/section/div[3]/div/table/tbody/tr[1]/td[1]/mat-checkbox/div/div/input"));
                     System.out.println("my checkbox locate is:" +findmyele);
                     findmyele.click();
