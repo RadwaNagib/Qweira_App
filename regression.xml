@@ -25,6 +25,11 @@
              <class name="updatelist_StepDef"/>
          </classes>
      </test>
+     <test name="Delete_list">
+        <classes>
+            <class name="Deletelist_StepDef"/>
+        </classes>
+    </test>
       <test name="addcontacttolist">
          <classes>
              <class name="addContactOnList"/>
