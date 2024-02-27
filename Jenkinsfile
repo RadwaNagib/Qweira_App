@@ -25,14 +25,7 @@ pipeline {
 
             }
          }
-        stage('Run Tests1')
-        {
-               steps {
-                // Assuming your tests are testNG tests(send email)
-                bat "\"${MAVEN_HOME}\\bin\\mvn\" test -Dtestng.file=mail.xml"
-
-            }
-         }
+     
         }
     }
 
