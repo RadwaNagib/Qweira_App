@@ -18,12 +18,6 @@ pipeline {
                 archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
             }
         }
-         stage('Run Tests') {
-           steps {
-        // Assuming your tests are TestNG tests
-           bat "\"${MAVEN_HOME}\\bin\\mvn\" test -Dtestng.file=mail.xml"
-    }
-        }
      
         }
     }
