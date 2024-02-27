@@ -12,23 +12,24 @@ pipeline {
                bat "\"${MAVEN_HOME}\\bin\\mvn\" clean install"
             }
         }
-  stage('target') {
+  stage('Build1') {
             steps {
+                bat 'make' 
                 archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
             }
         }
          stage('Run Tests') {
-           steps {
-        // Assuming your tests are TestNG tests
-           bat "\"${MAVEN_HOME}\\bin\\mvn\" test -Dtestng.file=regression.xml"
-    }
-              steps {
-        // Assuming your tests are TestNG tests
-        bat "\"${MAVEN_HOME}\\bin\\mvn\" test -Dtestng.file=mail.xml"
-    }
-        }
-       
-        }
-    }
+            steps {
+                // Assuming your tests are testNG tests(run tests)
+               bat "${MAVEN_HOME}\\bin\\mvn test   Dtestng.file=regression.xml"
 
+            }
+               steps {
+                // Assuming your tests are testNG tests(send email)
+                bat "\"${MAVEN_HOME}\\bin\\mvn\" test -Dtestng.file=mail.xml"
+
+            }
+        }
+    }
+}
 
