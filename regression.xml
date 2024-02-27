@@ -1,9 +1,33 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Contact,Lists"  preserve-order="true"  verbose="2" >
+<suite name="Tests"  preserve-order="true"  verbose="2" >
      <test name="add_Contact">
          <classes>
              <class name="Contacts_StepDef"/>
-
+         </classes>
+     </test>
+        <test name="update_Contact">
+         <classes>
+             <class name="updatecontact_StepDef"/>
+         </classes>
+     </test>
+      <test name="delete_Contact">
+         <classes>
+             <class name="deleteContact_StepDef"/>
+         </classes>
+     </test>
+      <test name="add_list">
+         <classes>
+             <class name="createList_StepDef"/>
+         </classes>
+     </test>
+        <test name="update_list">
+         <classes>
+             <class name="updatelist_StepDef"/>
+         </classes>
+     </test>
+      <test name="addcontacttolist">
+         <classes>
+             <class name="addContactOnList"/>
          </classes>
      </test>
 </suite>
