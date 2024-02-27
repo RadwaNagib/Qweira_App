@@ -43,7 +43,7 @@
         <maven.compiler.target>20</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-  <build>
+<build>
     <plugins>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
@@ -54,11 +54,8 @@
                     <!-- Provide the path to your TestNG XML file -->
                     <suiteXmlFile>regression.xml</suiteXmlFile>
                 </suiteXmlFiles>
-                       <suiteXmlFiles>
-                    <!-- Provide the path to your TestNG XML file -->
-                  <suiteXmlFile>mail.xml</suiteXmlFile>
-                </suiteXmlFiles>
             </configuration>
+
         </plugin>
     </plugins>
 </build>
