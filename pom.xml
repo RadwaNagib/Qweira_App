@@ -57,6 +57,18 @@
             </configuration>
 
         </plugin>
+
+             <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.2.2</version>
+            <configuration>
+                <suiteXmlFiles>
+                    <!-- Provide the path to your TestNG XML file -->
+                    <suiteXmlFile>mail.xml</suiteXmlFile>
+                </suiteXmlFiles>
+            </configuration>
+        </plugin>
     </plugins>
 </build>
 
