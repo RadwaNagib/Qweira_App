@@ -24,12 +24,13 @@ pipeline {
                bat "\"${MAVEN_HOME}\\bin\\mvn\" test Dtestng.file=regression.xml"
 
             }
-         }
+         
                steps {
                 // Assuming your tests are testNG tests(send email)
                 bat "\"${MAVEN_HOME}\\bin\\mvn\" test -Dtestng.file=mail.xml"
 
             }
+         }
         }
     }
 
