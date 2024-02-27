@@ -25,7 +25,7 @@ pipeline {
 
             }
          }
-        stage('mymail')
+        stage('Run Tests1')
         {
                steps {
                 // Assuming your tests are testNG tests(send email)
