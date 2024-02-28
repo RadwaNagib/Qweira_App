@@ -31,7 +31,7 @@ pipeline {
 
    post {
     always {
-        emailext subject: "Pipeline ${currentBuild.result}: Job ${JOB_NAME} [${BUILD_NUMBER}]",
+        emailext subject: "Pipeline ${Qweira_App.result}: Job ${JOB_NAME} [${BUILD_NUMBER}]",
                   body: "Check console output at ${BUILD_URL}",
                   recipientProviders: [[$class: 'DevelopersRecipientProvider']],
                   to: 'wa.nagib86@gmail.com',  // Add your email address here
