@@ -52,7 +52,7 @@
             <configuration>
                 <suiteXmlFiles>
                     <!-- Provide the path to your TestNG XML file -->
-                    <suiteXmlFile>mail.xml</suiteXmlFile>
+                    <suiteXmlFile>regression.xml</suiteXmlFile>
                 </suiteXmlFiles>
             </configuration>
         </plugin>
