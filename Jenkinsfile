@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     stages {
         stage('Stage 1') {
             steps {
@@ -38,11 +37,12 @@ pipeline {
                   to: 'wa.nagib86@gmail.com',  // Add your email address here
                   mimeType: 'text/html',      // You can adjust the mimeType as needed
                   attachLog: true,             // Attach build log to email
-                  attachmentsPattern: '**/target/*.jar',  // Add your specific artifact path/pattern
-                //  replyTo: 'your-reply-email@example.com',  // Add your reply-to email if needed
-                  //cc: 'additional-email@example.com',        // Add additional CC email if needed
-                //  bcc: 'hidden-email@example.com'             // Add hidden BCC email if needed
-    }
+                  attachmentsPattern: '**/target/*.jar',   Add your specific artifact path/pattern
+                //  replyTo: 'your-reply-email@example.com',   Add your reply-to email if needed
+                  //cc: 'additional-email@example.com',         Add additional CC email if needed
+                //  bcc: 'hidden-email@example.com'              Add hidden BCC email if needed
+    
+}
 }
 }
 
