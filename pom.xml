@@ -53,6 +53,8 @@
                 <suiteXmlFiles>
                     <!-- Provide the path to your TestNG XML file -->
                     <suiteXmlFile>regression.xml</suiteXmlFile>
+                  <suiteXmlFile>mail.xml</suiteXmlFile>
+
                 </suiteXmlFiles>
             </configuration>
         </plugin>
