@@ -26,7 +26,17 @@ pipeline {
                 }
             }
         }
-      
+         post {
+        always {
+            emailext subject: "Pipeline ${currentBuild.result}: Job ${JOB_NAME} [${BRANCH_NAME}] - Build: Qweira_App",
+                body: "Check console output at https://github.com/RadwaNagib/Qweira_App.git",
+                to: 'wa.nagib86@gmail.com',
+                mimeType: 'text/html',
+                attachLog: true,
+                attachmentsPattern: '**/target/*.jar'
+        }
+    }
     }
 }
+
 
