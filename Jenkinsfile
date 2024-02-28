@@ -31,7 +31,7 @@ pipeline {
 
    post {
     always {
-                 emailext subject: "Pipeline ${Qweira_App.result}: Job ${Qweira_App} [${Branch1}] - Email Class: mail.xml - Build: Qweira_App",
+                 emailext subject: "Pipeline ${Qweira_App.result}: Job ${Qweira_App} [${Branch1}] - Build: Qweira_App",
                   body: "Check console output at https://github.com/RadwaNagib/Qweira_App.git",
                 //  recipientProviders: [[$class: 'DevelopersRecipientProvider']],
                   to: 'wa.nagib86@gmail.com',  // Add your email address here
