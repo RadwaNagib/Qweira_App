@@ -5,6 +5,12 @@
              <class name="Contacts_StepDef"/>
          </classes>
      </test>
+      <test name="mymail">
+        <classes>
+            <class name="SendEmail"/>
+
+        </classes>
+    </test>
        <!-- <test name="update_Contact">
          <classes>
              <class name="updatecontact_StepDef"/>
