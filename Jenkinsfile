@@ -31,8 +31,8 @@ pipeline {
 
    post {
     always {
-        emailext subject: "Pipeline ${Qweira_App.result}: Job ${JOB_NAME} [${BUILD_NUMBER}]",
-                  body: "Check console output at ${BUILD_URL}",
+        emailext subject: "Pipeline ${Qweira_App.result}: Job ${Qweira.App} [${Branch1}] Email Class: mail.xml - Build: Qweira_App",
+                  body: "Check console output at ${https://github.com/RadwaNagib/Qweira_App.git}",
                   recipientProviders: [[$class: 'DevelopersRecipientProvider']],
                   to: 'wa.nagib86@gmail.com',  // Add your email address here
                   mimeType: 'text/html',      // You can adjust the mimeType as needed
