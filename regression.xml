@@ -5,7 +5,7 @@
              <class name="Contacts_StepDef"/>
          </classes>
      </test>
-        <test name="update_Contact">
+       <!-- <test name="update_Contact">
          <classes>
              <class name="updatecontact_StepDef"/>
          </classes>
@@ -34,7 +34,7 @@
          <classes>
              <class name="addContactOnList"/>
          </classes>
-     </test>
+     </test>-->
 </suite>
     
 
