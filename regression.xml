@@ -5,11 +5,12 @@
              <class name="Contacts_StepDef"/>
          </classes>
      </test>
-       <!-- <test name="update_Contact">
+        <test name="update_Contact">
          <classes>
              <class name="updatecontact_StepDef"/>
          </classes>
      </test>
+    <!--
       <test name="delete_Contact">
          <classes>
              <class name="deleteContact_StepDef"/>
