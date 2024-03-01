@@ -2,15 +2,15 @@
 <suite name="Tests"  preserve-order="true"  verbose="2" >
      <test name="add_Contact">
          <classes>
-             <class name="Contacts_StepDef"/>
+             <class name="createList_StepDef"/>
          </classes>
      </test>
+     <!--
         <test name="update_Contact">
          <classes>
              <class name="updatecontact_StepDef"/>
          </classes>
      </test>
-    <!--
       <test name="delete_Contact">
          <classes>
              <class name="deleteContact_StepDef"/>
