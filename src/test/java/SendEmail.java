@@ -32,7 +32,7 @@ public class SendEmail {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(username));
            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("wa.nagib86@gmail.com"));
-           // message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("besoocool3636@gmail.com"));
+            //message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("besoocool3636@gmail.com"));
 
             message.setSubject("Result of Test");
 
