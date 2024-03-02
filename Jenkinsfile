@@ -26,6 +26,14 @@ pipeline {
                 }
             }
         }
+        stage('Read and Run Mail.xml') {
+                    steps {
+                        script {
+                            // Read content from mail.xml
+                            def mailContent = readFile 'Qweira.App/mail.xml'
+                            }
+                            }
+                            }
 
         }
     }

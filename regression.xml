@@ -5,6 +5,7 @@
              <class name="Contacts_StepDef"/>
          </classes>
      </test>
+
      <!--
         <test name="update_Contact">
          <classes>
