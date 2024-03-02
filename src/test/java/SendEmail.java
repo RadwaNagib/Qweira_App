@@ -31,7 +31,7 @@ public class SendEmail {
         try {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(username));
-           message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("wa.nagib86@gmail.com"));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("wa.nagib86@gmail.com"));
             //message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("besoocool3636@gmail.com"));
 
             message.setSubject("Result of Test");
@@ -45,9 +45,9 @@ public class SendEmail {
             multipart.addBodyPart(messageBodyPart);
 
             // Attach .xml file
-          //  MimeBodyPart xmlAttachment = new MimeBodyPart();
-         //   xmlAttachment.attachFile(new File("C:/Users/Shass/IdeaProjects/Qweira.App/test-output/testng-failed.xml")); //the path to your .xml file
-           // multipart.addBodyPart(xmlAttachment);//C:/Users/Shass/IdeaProjects/Qweira.App/
+            //  MimeBodyPart xmlAttachment = new MimeBodyPart();
+            //   xmlAttachment.attachFile(new File("C:/Users/Shass/IdeaProjects/Qweira.App/test-output/testng-failed.xml")); //the path to your .xml file
+            // multipart.addBodyPart(xmlAttachment);//C:/Users/Shass/IdeaProjects/Qweira.App/
 
             // Attach .html file
             MimeBodyPart htmlAttachment = new MimeBodyPart();
@@ -67,5 +67,3 @@ public class SendEmail {
         }
     }
 }
-
-

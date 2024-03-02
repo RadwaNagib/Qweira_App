@@ -26,7 +26,14 @@ pipeline {
                 }
             }
         }
-        
+        stage('Stage 4') {
+                    steps {
+                        catchError {
+                            // Your stage 3 steps
+           archiveArtifacts artifacts: '**/mail/*.xml', fingerprint: true
+                        }
+                    }
+                }
         }
     }
   
