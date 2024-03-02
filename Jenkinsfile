@@ -30,7 +30,7 @@ pipeline {
                     steps {
                         script {
                             // Read content from mail.xml
-                            def mailContent = readFile 'Qweira.App/mail.xml'
+                            def mailContent = readFile 'mail.xml'
                             }
                             }
                             }
