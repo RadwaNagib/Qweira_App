@@ -30,7 +30,7 @@ pipeline {
                     steps {
                         catchError {
                             // Your stage 3 steps
-           archiveArtifacts artifacts: '**/emailable-report/*.html', fingerprint: true
+           archiveArtifacts artifacts: '**/mail/*.xml', fingerprint: true
                         }
                     }
                 }
