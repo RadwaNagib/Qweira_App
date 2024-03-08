@@ -1,5 +1,15 @@
 pipeline {
     agent any
+    environment {
+                        PROJECT_ROOT = 'C:\\Users\\Shass\\IdeaProjects\\Qweira_App'
+                        WORKSPACE_WINDOWS = 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\test_currentBuild'
+                        WORKSPACE = 'C:/ProgramData/Jenkins/.jenkins/workspace/test_currentBuild'
+                        TARGET_FOLDER = 'target'
+                        SUREFIRE_REPORTS = '/surefire-reports'
+                        HTML_REPORT = '/emailable-report.html'
+                        EMAIL_RECIPIENT = 'wa.nagib86@gmail.com'
+
+                    }
     stages {
         stage('Stage 1') {
             steps {
@@ -9,16 +19,7 @@ pipeline {
                 }
             }
         }
-  environment {
-                    PROJECT_ROOT = 'C:\\Users\\Shass\\IdeaProjects\\Qweira_App'
-                    WORKSPACE_WINDOWS = 'C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\test_currentBuild'
-                    WORKSPACE = 'C:/ProgramData/Jenkins/.jenkins/workspace/test_currentBuild'
-                    TARGET_FOLDER = 'target'
-                    SUREFIRE_REPORTS = '/surefire-reports'
-                    HTML_REPORT = '/emailable-report.html'
-                    EMAIL_RECIPIENT = 'wa.nagib86@gmail.com'
 
-                }
                 stage('Cleanup') {
                             steps {
                                 script {
