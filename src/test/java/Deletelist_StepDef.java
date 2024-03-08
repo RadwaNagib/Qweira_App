@@ -252,11 +252,5 @@ public void assert_Delete_done_success()  throws InterruptedException{
 
 }
 
-    @AfterTest
-    public void closeDriver() throws InterruptedException
-    {
-       // Thread.sleep(1000);
-        driver.close();
-        driver.quit();
-    }
+
 }

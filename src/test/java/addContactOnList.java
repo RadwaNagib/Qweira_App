@@ -309,13 +309,7 @@ public class addContactOnList extends BaseTest
        // wait.until(d -> addcontactOnlist.loc_save_bttn_popscreen().isDisplayed());
         addcontactOnlist.loc_save_bttn_popscreen().click();
     }
-    @AfterTest
-    public void closeDriver() throws InterruptedException
-    {
-        Thread.sleep(2000);
-        driver.close();
-        driver.quit();
-    }
+
 }
 
 

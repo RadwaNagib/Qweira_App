@@ -238,11 +238,5 @@ public void assert_update_done_success() throws InterruptedException {
     }
 
 }
-    @AfterTest
-    public void closeDriver() throws InterruptedException
-    {
-        //Thread.sleep(2000);
-        driver.close();
-        driver.quit();
-    }
+
 }

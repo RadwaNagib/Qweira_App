@@ -1,3 +1,5 @@
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
 import org.testng.reporters.EmailableReporter;
 
@@ -11,8 +13,16 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class SendEmail {
-    @Test
-    public void mymail() {
+@Test
+public void mymail() {
+        String directoryPath = "C:/Users/Shass/IdeaProjects/Qweira.App/test-output/emailable-report.html";
+
+        // dir=null or delete all files in the directory before proceeding
+        File directory = new File(directoryPath);
+        File[] files = directory.listFiles();
+        if (files != null) {
+            files=null;
+        }
         String username = "contact@qweira.com"; // email
         String password = "Mm123456@@";       // password
 
@@ -44,7 +54,7 @@ public class SendEmail {
             messageBodyPart.setText("This is an automation test email sent from Java.");
             multipart.addBodyPart(messageBodyPart);
 
-            // Attach .xml file
+            // Attach .xml file file:///C:/Users/Shass/IdeaProjects/Qweira.App/test-output/emailable-report.html
             //  MimeBodyPart xmlAttachment = new MimeBodyPart();
             //   xmlAttachment.attachFile(new File("C:/Users/Shass/IdeaProjects/Qweira.App/test-output/testng-failed.xml")); //the path to your .xml file
             // multipart.addBodyPart(xmlAttachment);//C:/Users/Shass/IdeaProjects/Qweira.App/
@@ -52,7 +62,7 @@ public class SendEmail {
             // Attach .html file
             MimeBodyPart htmlAttachment = new MimeBodyPart();
             htmlAttachment.attachFile(new File("C:/Users/Shass/IdeaProjects/Qweira.App/test-output/emailable-report.html")); //the path to your .html file
-            multipart.addBodyPart(htmlAttachment);//C:/Users/Shass/IdeaProjects/Qweira.App/
+            multipart.addBodyPart(htmlAttachment);
 
             //the content of the message to the Multipart object
             message.setContent(multipart);

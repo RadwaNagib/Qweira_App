@@ -152,10 +152,6 @@ public void assert_addlist_ontable() throws InterruptedException {
         }
     }
 }
-@AfterTest
-    public void closeDriver()
-{
-    driver.close();
-    driver.quit();
-}
+
+
 }

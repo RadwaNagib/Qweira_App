@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeSuite;
 
 
 public class BaseTest {
+
     public WebDriver driver;
 
     public WebDriver getDriver(){
@@ -26,6 +27,10 @@ public class BaseTest {
     @AfterClass
     public void stopDriver()
     {
-        //  driver.quit();
+
+        driver.close();
+        driver.quit();
     }
+
+
 }

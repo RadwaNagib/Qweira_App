@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Tests"  preserve-order="true"  verbose="2" >
-     <test name="add_Contact">
+     <test name="contact">
          <classes>
              <class name="Contacts_StepDef"/>
          </classes>
@@ -38,5 +38,5 @@
          </classes>
      </test>-->
 </suite>
-    
+
 

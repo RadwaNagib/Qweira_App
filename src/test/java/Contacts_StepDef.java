@@ -140,20 +140,11 @@ public void assert_nav_addcontact_popscreen_filldata() throws InterruptedExcepti
                     // Perform assertion
                     System.out.println("contact name after added on table: " + cellText);
                     Assert.assertTrue(cellText.contains(this.addedcontactname), "contact name not added successfully");
-
                     break;
                 }
-
             }
         }
+    }
 
-    }
-   @AfterTest
-    public void closeDriver() throws InterruptedException
-    {
-        Thread.sleep(1000);
-        driver.close();
-        driver.quit();
-    }
 
 }

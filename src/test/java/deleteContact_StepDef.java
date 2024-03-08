@@ -219,11 +219,6 @@ public class deleteContact_StepDef extends BaseTest{
    }
 
 
-    @AfterClass
-    public void closeBrowser()
-    {
-        driver.close();
-        driver.quit();
-    }
+
 
 }

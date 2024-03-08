@@ -220,12 +220,7 @@ public class updatecontact_StepDef  extends BaseTest {
         }
     }
 
-    @AfterTest
-    public void closeDriver() throws InterruptedException {
-        Thread.sleep(1000);
-        driver.close();
-        driver.quit();
-    }
+
 
 
 }
