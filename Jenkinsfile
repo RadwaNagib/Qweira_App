@@ -65,7 +65,7 @@ pipeline {
                          def testNGAttachment = "${TARGET_FOLDER}${SUREFIRE_REPORTS}${HTML_REPORT}"
                          def testNGReportContent = readFile(file: testNGAttachment)
 
-                         if (fileExists(fileExists(testNGAttachment)) {
+                         if (fileExists(testNGAttachment)) {
                              emailext(
                                      subject: "testNGAttachment",
                                      body: "Please find the attached test results. \n\n${testNGReportContent}",
