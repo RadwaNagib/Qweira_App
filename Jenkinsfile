@@ -32,6 +32,8 @@ pipeline {
                                         echo "Target directory does not exist at : ${targetPath}. No cleanup needed."
                                     }
                                     }
+                                    }
+                                    }
 
         stage('Stage 2') {
             steps {
@@ -50,11 +52,11 @@ pipeline {
                 }
             }
         }
+        }
 
  post {
          always {
- //            stage('Mail Distribution') {
- //                steps {
+
                      script {
                          echo "Starting 'Mail Distribution' Stage!!"
                          //bat "C:/Users/Agami/scoop/apps/allure/2.25.0/bin/allure.bat generate --single-file allure-results --clean"
@@ -74,10 +76,10 @@ pipeline {
                              echo "File doesn't exist at: ${testNGAttachment}"
                          }
                      }
- //                }
- //            }
+                }
+            }
         }
-    }
-  
+
+
 
 
