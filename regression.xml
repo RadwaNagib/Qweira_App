@@ -1,8 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Tests"  preserve-order="true"  verbose="2" >
-     <test name="contact">
+     <test name="list">
          <classes>
-             <class name="Contacts_StepDef"/>
+             <class name="createList_StepDef"/>
          </classes>
      </test>
 
