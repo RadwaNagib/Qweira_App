@@ -40,7 +40,7 @@ pipeline {
             steps {
                 catchError {
                     // Your stage 2 steps
- bat "\"${MAVEN_HOME}\\bin\\mvn\" clean install"
+ bat "\"${MAVEN_HOME}\\bin\\mvn\" clean test"
                 }
             }
         }
