@@ -15,7 +15,7 @@ import java.util.Properties;
 public class SendEmail {
 @Test
 public void mymail() {
-        String directoryPath = "C:/Users/Shass/IdeaProjects/Qweira.App/test-output/emailable-report.html";
+        String directoryPath = "C:\\Radwa\\My_Qweira_App\\test-output\\emailable-report.html";
 
         // dir=null or delete all files in the directory before proceeding
         File directory = new File(directoryPath);
@@ -61,7 +61,7 @@ public void mymail() {
 
             // Attach .html file
             MimeBodyPart htmlAttachment = new MimeBodyPart();
-            htmlAttachment.attachFile(new File("C:/Users/Shass/IdeaProjects/Qweira.App/test-output/emailable-report.html")); //the path to your .html file
+            htmlAttachment.attachFile(new File("C:\\Radwa\\My_Qweira_App\\test-output\\emailable-report.html")); //the path to your .html file
             multipart.addBodyPart(htmlAttachment);
 
             //the content of the message to the Multipart object
