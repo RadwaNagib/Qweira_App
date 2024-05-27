@@ -34,8 +34,6 @@ jobs:
       - name: Clean Maven and target folder
         run: |
           mvn clean
-          rm -rf target
-          rm -rf test-output
 
       - name: Build and test Qweira App
         run: mvn test
