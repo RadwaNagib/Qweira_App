@@ -34,7 +34,7 @@ jobs:
         continue-on-error: true
         run: mvn test clean test
       - name: Send mail
-        uses: dawidd6/action-send-mail@v3
+        uses: hilarion5/send-mail@v1
         with:
           connection_url: secrets.MAIL_CONNECTION
           server_address: smtp.office365.com
