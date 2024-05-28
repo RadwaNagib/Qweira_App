@@ -32,6 +32,5 @@ jobs:
           maven-version: 3.9.6
       - name: Run Tests
         continue-on-error: true
-        run: rm -rf test-output
-             mvn test clean test
+        run: mvn test clean test
              
