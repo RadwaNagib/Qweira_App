@@ -33,4 +33,16 @@ jobs:
       - name: Run Tests
         continue-on-error: true
         run: mvn test clean test
-             
+      - name: Send mail
+        uses:  dawidd6/action-send-mail@v3
+        with:
+          connection_url: ${{secrets.MAIL_CONNECTION}}
+          server_address: smtp.office365.com
+          server_port: 587
+          secure: true
+          username: ${{contact@qweira.com}}
+          password: ${{Mm123456@@}}
+          subject: Github Actions job result
+          to: wa.nagib86@gmail.com
+          body: Build job of ${{Qweira_App}} completed successfully!
+          attachments: regression.xml
